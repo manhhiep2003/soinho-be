@@ -1,0 +1,16 @@
+model Role {
+    id BigInt @id @default(autoincrement())
+
+    roleName String   @unique @map("role_name") @db.VarChar(50)
+    roleDesc String?  @map("role_desc") @db.VarChar(100)
+    isActive Boolean? @default(true) @map("is_active") @db.Boolean()
+
+    createdAt DateTime? @default(now()) @map("created_date") @db.Timestamptz(3)
+    createdBy String    @map("created_by") @db.VarChar(36)
+    updatedAt DateTime? @updatedAt @map("modified_date") @db.Timestamptz(3)
+    updatedBy String?   @map("modified_by") @db.VarChar(36)
+
+    User User[]
+
+    @@map("dt_role")
+}
