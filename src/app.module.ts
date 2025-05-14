@@ -6,6 +6,8 @@ import { RequestContextModule } from 'nestjs-request-context';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import { ExceptionInterceptor } from './libs/application/interceptor/exception.interceptor';
 import { EventEmitterModule } from '@nestjs/event-emitter';
+import { AuthModule } from './modules/auth/auth.module';
+import { UserModule } from './modules/user/user.module';
 
 const interceptors = [
   {
@@ -25,6 +27,8 @@ const interceptors = [
         databaseUrl: databaseConfig.databaseUrl,
       }),
     }),
+    AuthModule,
+    UserModule,
   ],
   controllers: [],
   providers: [...interceptors],

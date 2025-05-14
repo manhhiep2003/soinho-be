@@ -1,9 +1,9 @@
 import { Guard } from '../application/validator/guard';
 import {
-  ArgumentNotProvidedException,
   ArgumentInvalidException,
+  ArgumentNotProvidedException,
   ArgumentOutOfRangeException,
-} from '../exceptions/exception';
+} from '../exceptions';
 import { convertPropsToObject } from '../utils/convert-props-to-object.util';
 
 export type EntityID = string | bigint;
