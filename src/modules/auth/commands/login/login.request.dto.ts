@@ -1,4 +1,4 @@
-import { IsNotEmpty, MaxLength } from 'class-validator';
+import { IsEmail, IsNotEmpty, MaxLength } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class LoginRequestDto {
@@ -9,12 +9,14 @@ export class LoginRequestDto {
   })
   @IsNotEmpty()
   @MaxLength(150)
+  @IsEmail()
   email: string;
 
   @ApiProperty({
     example: 'password',
-    description: 'Password',
+    description: 'Mật khẩu',
   })
   @IsNotEmpty()
+  @MaxLength(200)
   password: string;
 }

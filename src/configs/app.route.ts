@@ -1,4 +1,6 @@
 const authRoot = 'auth';
+const userRoot = 'user';
+
 const baseRoutes = (root: string) => {
   return {
     root,
@@ -14,7 +16,14 @@ const v1 = 'v1';
 export const routesV1 = {
   version: v1,
   auth: {
-    ...baseRoutes(authRoot),
+    root: authRoot,
+    register: `/${authRoot}/register`,
     login: `/${authRoot}/login`,
+    logout: `/${authRoot}/logout`,
+    refreshToken: `/${authRoot}/refresh-token`,
+  },
+
+  user: {
+    ...baseRoutes(`${userRoot}/user`),
   },
 };
