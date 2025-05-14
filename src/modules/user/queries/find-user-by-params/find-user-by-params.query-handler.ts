@@ -28,8 +28,6 @@ export class FindUserByParamsQueryHandler
     if (found.isNone()) {
       return Err(new UserNotFoundError());
     }
-    const user = found.unwrap();
-    console.log(user);
-    return Ok(user);
+    return Ok(found.unwrap());
   }
 }

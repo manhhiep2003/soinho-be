@@ -1,5 +1,5 @@
 const authRoot = 'auth';
-const userRoot = 'user';
+const saRoot = 'sa';
 
 const baseRoutes = (root: string) => {
   return {
@@ -24,7 +24,9 @@ export const routesV1 = {
     refreshToken: `/${authRoot}/refresh-token`,
   },
 
-  user: {
-    ...baseRoutes(`${userRoot}/user`),
+  sa: {
+    user: {
+      ...baseRoutes(`${saRoot}/user`),
+    },
   },
 };

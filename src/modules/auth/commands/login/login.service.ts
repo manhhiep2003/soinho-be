@@ -34,7 +34,6 @@ export class LoginService implements ICommandHandler<LoginCommand> {
     }
 
     const userEntity = userFound.unwrap();
-    console.log(userEntity);
     const isValidPassword = await this.hashService.verifyPassword(
       command.password,
       userEntity.getProps().password,
@@ -51,6 +50,7 @@ export class LoginService implements ICommandHandler<LoginCommand> {
 
     const user: LoginResponseDto = {
       accessToken,
+      user: userDto,
     };
 
     return Ok(user);

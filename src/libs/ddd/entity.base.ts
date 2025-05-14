@@ -47,7 +47,7 @@ export abstract class Entity<EntityProps, A extends EntityID> {
    * For example it could be a UUID for aggregate root,
    * and shortid / nanoid for child entities.
    */
-  protected abstract _id: AggregateID<A>;
+  protected _id: AggregateID<A>;
 
   private readonly _createdAt: Date;
 
