@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import jwt from 'jsonwebtoken';
+import * as jwt from 'jsonwebtoken';
 import * as bcrypt from 'bcrypt';
 import { jwtConfig } from 'src/configs/jwt.config';
 
